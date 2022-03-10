@@ -1,0 +1,35 @@
+.App {
+  text-align: center;
+  background-color: rgb(160, 209, 194);
+}
+
+/* .articleInfo {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+} */
+
+.ArticleTile {
+  border: 2px solid red;
+  text-align: center;
+}
+
+.articlesTiles {
+  border: solid;
+  margin: 10px;
+  flex-direction: row;
+}
+
+
+.main-article-title {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: black;
+  font-size: large;
+  font-weight: bold;
+}
+
+.Logo {
+  background-color: rgb(7, 39, 27);
+  color: rgb(120, 221, 183);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
