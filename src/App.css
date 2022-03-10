@@ -32,4 +32,35 @@
   background-color: rgb(7, 39, 27);
   color: rgb(120, 221, 183);
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 2px solid red;
+}
+
+.Topic {
+  background-color: rgb(7, 39, 27);
+  color: rgb(120, 221, 183);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  border: 2px solid red;
+  padding-left: 10px;
+  padding-right: 10px;
+  word-wrap: normal;
+  display: inline-block;
+}
+
+#topic-nav {
+  display: flex;
+  margin-right: 5%;
+}
+
+#main-title {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+  background-color: rgb(7, 39, 27);
+  color: rgb(120, 221, 183);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.topicPage {
+
 }

@@ -20,5 +20,17 @@ const getArticleById = (article_id) => {
     })
 }
 
+const getArticleByQuery = (topic) => {
+    return newsApi.get(`/articles?topic=${topic}`)
+    .then((response) => {
+        return response.data
+    })
+}
 
-export {getArticles, newsApi, getArticleById};
+const getComments = (article_id) => {
+    return newsApi.get(`/articles/${article_id}/comments`)
+    .then((response) => {
+        return response.data
+    })
+}
+export {getArticles, newsApi, getArticleById, getArticleByQuery, getComments};

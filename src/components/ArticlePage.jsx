@@ -1,5 +1,5 @@
 // import { Link } from "react-router-dom";
-import { getArticleById } from "../api";
+import { getArticleById, getComments} from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
@@ -9,6 +9,7 @@ export default function ArticlePage() {
   console.log(article_id)
   const [isLoading, setIsLoading] = useState(true);
   const [article, setArticle] = useState({})
+  const [comments, setComments] = useState({})
 
 
   useEffect(() => {
@@ -17,6 +18,9 @@ export default function ArticlePage() {
       setArticle(article);        
       setIsLoading(false);
     });
+    getComments(article_id).then((comments) => {
+      setComments(comments);
+    })
   }, [article_id]);
 
   if (isLoading) return <p>please standby...</p>;
@@ -26,12 +30,17 @@ export default function ArticlePage() {
       <article id={article_id} className="ArticlePage">
         <h1>{article.article.title}</h1>
         <p>{article.article.created_at}</p>
+        <p>Votes: {article.article.votes}</p>
         <div className="articlePageInfo">
           <p>Topic: {article.article.topic}</p>
           <p>Author: {article.article.author}</p>
-          <p>Votes: {article.article.votes}</p>
           <p>Body: {article.article.body}</p>
           <p>Comments: {article.article.comment_count}</p>
+          <div className="commentSection"> 
+          <p>
+            // comments body, votes, created_at, author HERE
+          </p>
+          </div>
         </div>
       </article>
   </section>
