@@ -1,7 +1,8 @@
 // import { Link } from "react-router-dom";
-import { getArticleById, getComments} from "../api";
+import { getArticleById} from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
+import CommentDisplay from "./CommentDisplay";
 
 
 export default function ArticlePage() {
@@ -18,9 +19,6 @@ export default function ArticlePage() {
       setArticle(article);        
       setIsLoading(false);
     });
-    getComments(article_id).then((comments) => {
-      setComments(comments);
-    })
   }, [article_id]);
 
   if (isLoading) return <p>please standby...</p>;
@@ -38,7 +36,7 @@ export default function ArticlePage() {
           <p>Comments: {article.article.comment_count}</p>
           <div className="commentSection"> 
           <p>
-            // comments body, votes, created_at, author HERE
+            <CommentDisplay/>
           </p>
           </div>
         </div>
