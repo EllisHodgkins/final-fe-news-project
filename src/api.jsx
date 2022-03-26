@@ -50,4 +50,12 @@ const patchArticleVotes = ( article_id, inc_votes ) => {
         return response.data;
     })
 }
-export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment, patchArticleVotes };
+
+const deleteComment = (comment_id) => {
+    return newsApi.delete(`/comments/${comment_id}`)
+    .then((response) => {
+        return response.data
+    })
+}
+
+export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment, patchArticleVotes, deleteComment };
