@@ -42,4 +42,12 @@ const postComment = ( article_id, body, username ) => {
         return response.data;
     })
 }
-export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment };
+
+const patchArticleVotes = ( article_id, inc_votes ) => {
+    return newsApi.patch(`/articles/${article_id}`, {
+        inc_votes: inc_votes
+    }).then((response) => {
+        return response.data;
+    })
+}
+export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment, patchArticleVotes };

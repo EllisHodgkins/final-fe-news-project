@@ -1,8 +1,9 @@
 // import { Link } from "react-router-dom";
-import { getArticleById} from "../api";
+import { getArticleById } from "../api";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import CommentDisplay from "./CommentDisplay";
+import ArticleVote from "./ArticleVote";
 
 
 export default function ArticlePage() {
@@ -29,10 +30,11 @@ export default function ArticlePage() {
         <h1>{article.article.title}</h1>
         <p>{article.article.created_at}</p>
         <p>Votes: {article.article.votes}</p>
+        <ArticleVote/>
         <div className="articlePageInfo">
           <p>Topic: {article.article.topic}</p>
           <p>Author: {article.article.author}</p>
-          <p>Body: {article.article.body}</p>
+          <p>{article.article.body}</p>
           <p>Comments: {article.article.comment_count}</p>
           <div className="commentSection"> 
           <p>
