@@ -33,4 +33,13 @@ const getComments = (article_id) => {
         return response.data
     })
 }
-export {getArticles, newsApi, getArticleById, getArticleByQuery, getComments};
+
+const postComment = ( article_id, body, username ) => {
+    return newsApi.post(`/articles/${article_id}/comments`, {
+        username: username.username,
+        body: body.body
+    }).then((response) => {
+        return response.data;
+    })
+}
+export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment };

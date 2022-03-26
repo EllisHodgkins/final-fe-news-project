@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import {getComments} from "../api";
 import CommentTile from "./CommentTile";
 import { useParams } from "react-router-dom";
+import PostComment from "./PostComment";
 
 
 export default function CommentDisplay({comment}) {
@@ -16,9 +17,11 @@ export default function CommentDisplay({comment}) {
           setIsLoading(false);
         });
       }, [article_id]);
+      
       if (isLoading) return <p>please standby...</p>;
       return (
         <section className="commentsTiles">
+          <div><PostComment/></div>
           {comments.comments.map(({ comment_id, body, article_id, author, votes, created_at }) => {
             return (
               <CommentTile
