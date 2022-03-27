@@ -1,11 +1,12 @@
 import React from "react"
 import ArticleDisplay from "./ArticleDisplay"
 
-export default function HomePage({filter}) {
+export default function HomePage() {
 
     return (
         <div id="homepage">
-            <ArticleDisplay filter={filter}/>
+            <ArticleDisplay/>
+
         </div>
     )
 }

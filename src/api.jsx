@@ -58,4 +58,12 @@ const deleteComment = (comment_id) => {
     })
 }
 
-export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment, patchArticleVotes, deleteComment };
+const getArticleByOrder = (order) => {
+    return newsApi.get(`/articles?sort_by=${order}`)
+    .then((response) => {
+        return response.data
+    })
+}
+ 
+
+export { getArticles, newsApi, getArticleById, getArticleByQuery, getComments, postComment, patchArticleVotes, deleteComment, getArticleByOrder };
